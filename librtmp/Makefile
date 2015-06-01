@@ -80,7 +80,8 @@ LDFLAGS=$(XLDFLAGS)
 
 OBJS=rtmp.o log.o amf.o hashswf.o parseurl.o
 
-all:	librtmp.a $(SO_LIB)
+all:	librtmp.a
+#$(SO_LIB)
 
 clean:
 	rm -f *.o *.a *.$(SOX) *$(SO_EXT) librtmp.pc
@@ -105,7 +106,8 @@ librtmp.pc: librtmp.pc.in Makefile
 		-e "s;@PUBLIC_LIBS@;$(PUBLIC_LIBS);" \
 		-e "s;@PRIVATE_LIBS@;$(PRIVATE_LIBS);" librtmp.pc.in > $@
 
-install:	install_base $(SO_INST)
+install:	install_base
+#$(SO_INST)
 
 install_base:	librtmp.a librtmp.pc
 	-mkdir -p $(INCDIR) $(LIBDIR)/pkgconfig $(MANDIR)/man3 $(SODIR)

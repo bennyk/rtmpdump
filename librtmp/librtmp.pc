@@ -1,0 +1,13 @@
+prefix=/Users/bennykhoo/Sources/MyVR/android-ffmpeg-x264/Project/jni/out/x86
+exec_prefix=${prefix}
+libdir=/Users/bennykhoo/Sources/MyVR/android-ffmpeg-x264/Project/jni/out/x86/lib
+incdir=${prefix}/include
+
+Name: librtmp
+Description: RTMP implementation
+Version: v2.4
+Requires: libssl,libcrypto
+URL: http://rtmpdump.mplayerhq.hu
+Libs: -L${libdir} -lrtmp -lz 
+Libs.private: 
+Cflags: -I${incdir}
